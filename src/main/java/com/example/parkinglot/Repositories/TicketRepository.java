@@ -11,9 +11,9 @@ public class TicketRepository {
     private long lastSavedId = 0L;
 
     public Ticket save(Ticket ticket) {
-            ticket.setId(lastSavedId + 1);
-            lastSavedId += 1;
-            tickets.put(lastSavedId, ticket);
+            lastSavedId++;
+            ticket.setId(lastSavedId); // 0 +1 =1
+            tickets.put(lastSavedId, ticket); //1 , ticket
             return ticket;
     }
 }
